@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: none;
+}
+
+#game {
+    min-height: 100vh;
+    display: flex;
+}
+
+#board {
+    width: 400px;
+    height: 400px;
+
+    margin: auto;
+    border: black 1px solid;
+    border-radius: 8px;
+    display: grid;
+    grid-template-rows: repeat(9, 1fr);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+.cell {
+    border: rgba(128, 128, 128, 0.145) 1px solid;
+}
+
+/* Remove border for top row */
+.row:first-child .cell {
+    border-top: none;
+}
+
+/* Remove border for bottom row */
+.row:last-child .cell {
+    border-bottom: none;
+}
+
+/* Remove border for leftmost column */
+.cell:nth-child(12n + 1) {
+    border-left: none;
+}
+
+/* Remove border for rightmost column */
+.cell:nth-child(12n) {
+    border-right: none;
+}
